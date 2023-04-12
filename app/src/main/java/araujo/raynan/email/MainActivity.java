@@ -45,10 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra(Intent.EXTRA_SUBJECT, assunto);
                 i.putExtra(Intent.EXTRA_TEXT, texto);
 
-                //Tentando executar o Intent
+                //Tentando executar o Intent, se der certo você irá escolher um app
                 try {
                     startActivity(Intent.createChooser(i, "Escolha o APP"));
                 }
+                //caso haja um erro o catch será executado
                 catch (ActivityNotFoundException e){
                     Toast.makeText(MainActivity.this, "Não há nenhum app que posso realizar essa operação", Toast.LENGTH_SHORT).show();
                 }
